@@ -1,10 +1,13 @@
 JACKPOT   ASSIGMENT
-write the command for create a directory with name jackpot . In the jacktop create 100 subdirectory , in every subdirctory create 100 txt file. 
-Now create sunny.txt randomly somewhere.  Find where sunny.txt is located.?
+(A) write the command for create a directory with name jackpot . In the jacktop create 100 subdirectory , in every subdirctory create 100 txt file. 
+   Now create sunny.txt randomly somewhere.  Find where sunny.txt is located.?
 
 ==>     mkdir  JACKPOT                                    # this command will create a directory named with jackpot
         mkdir  JACKPOT/dir{1..100}                           # this command will create 100 directory inside jackpot named with dir,1,dir2...dir100.
-        touch JACKPOT/dir{1..100}/file{1..100}.txt          # this command will create 100 file in every sub-directory named with file1.txt,file2.txt...file100.txt
+        touch JACKPOT/dir{1..100}/file{1..100}.txt          # this command will create 100 file in every sub-directory named with file1..file100.txt
         touch JACKPOT/dir$(shuf -i 1-100 -n 1)/sunny.txt     # this command will create a sunny.txt file randomly in any sub directory  
         find JACKPOT -type f -name ‘sunny.txt’		           # this command will findout in which dir sunny.txt file was created
 
+(B) Find out where is sunny.txt file is located and move to desktop ?
+
+ ====>   find JACKPOT -type f -name ‘sunny.txt’ -exec mv {} ~/Desktop    # this command findout sunny.txt location and move to desktop
